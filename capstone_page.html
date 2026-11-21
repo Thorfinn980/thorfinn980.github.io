@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="stylesheet" href="assets/project-media.css">
+  <link rel="stylesheet" href="assets/shiftops.css">
   <script src="assets/project-media.js" defer></script>
   <script src="assets/work-order.js" defer></script>
 </head>
@@ -53,20 +54,36 @@
         </div>
       </figure>
     </article>
-    <article id="linekeeper" class="feature ruled">
+    <article id="linekeeper" class="feature ruled shiftops-feature">
       <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>LineKeeper</h2>
-      <p class="lead">A work-order app for the technician on the floor.</p>
+      <p class="lead">ShiftOps is the mobile app I built for maintenance technicians.</p>
       <p>A technician can report a fault, start a repair, and leave a completion note for the next shift. The React Native client talks to a Flask API backed by SQLite.</p>
       <p>I made the status change and its history entry save together. That keeps the maintenance record consistent if a request fails partway through an update.</p>
       <p class="stack">React Native / TypeScript / Flask / SQLite</p>
-      <a class="text-link" href="https://github.com/Thorfinn980/Line-Keeper">View source on GitHub</a></div>
+      <a class="text-link" href="https://github.com/Thorfinn980/Line-Keeper">View source on GitHub</a>
+      <details class="shiftops-disclosure">
+      <summary><span>Try the repair workflow</span></summary>
       <div class="demo" data-demo>
-        <div class="demo-top"><span class="demo-brand"><span class="rail-icon" aria-hidden="true"><i></i><i></i><i></i></span>LineKeeper</span><span>Workflow demo</span></div>
+        <div class="demo-top"><span class="demo-brand"><span class="rail-icon" aria-hidden="true"><i></i><i></i><i></i></span>ShiftOps</span><span>Workflow demo</span></div>
         <h3>Conveyor stops intermittently</h3><p class="demo-asset">Packaging Conveyor A &middot; Plant A</p>
         <ol class="workflow" aria-label="Repair stages"><li aria-current="step">Open</li><li>In progress</li><li>Completed</li></ol>
         <p class="demo-status" role="status">The operator reported two unexpected stops.</p>
         <div class="note-area" hidden><label for="note">Completion note</label><textarea id="note" rows="2" maxlength="300" placeholder="What did you fix?"></textarea></div>
         <div class="demo-controls" hidden><button type="button" class="button primary demo-action">Start repair</button><button class="text-link demo-reset" type="button" hidden>Reset demo</button></div>
+      </div>
+      </details>
+      </div>
+      <div class="shiftops-media">
+        <div class="shiftops-screens" role="group" aria-label="ShiftOps app screenshots">
+          <figure><a href="assets/shiftops-home.png" aria-label="Open full-size ShiftOps dashboard"><img src="assets/shiftops-home.png" width="792" height="1536" loading="lazy" alt="Home dashboard with work-order counts and a seven-day Work Momentum chart."></a><figcaption>Dashboard</figcaption></figure>
+          <figure><a href="assets/shiftops-work.png" aria-label="Open full-size ShiftOps work queue"><img src="assets/shiftops-work.png" width="792" height="1536" loading="lazy" alt="Searchable work queue with status filters, equipment names, locations, and priorities."></a><figcaption>Work queue</figcaption></figure>
+          <figure><a href="assets/shiftops-order.png" aria-label="Open full-size ShiftOps work order"><img src="assets/shiftops-order.png" width="792" height="1536" loading="lazy" alt="Completed compressor filter replacement with the original problem and the technician’s solution."></a><figcaption>Work order</figcaption></figure>
+        </div>
+        <details class="shiftops-disclosure shiftops-film">
+          <summary><span>Watch the ShiftOps demo</span><small>48 seconds</small></summary>
+          <video controls playsinline preload="none" width="720" height="1392" poster="assets/shiftops-home.png" aria-label="ShiftOps app walkthrough"><source src="assets/shiftops-demo.mp4" type="video/mp4"><a href="assets/shiftops-demo.mp4">Open the ShiftOps walkthrough</a></video>
+          <p>Follow a conveyor repair from the dashboard through the technician’s completion note. Silent recording.</p>
+        </details>
       </div>
     </article>
     <article id="projectw" class="feature media-feature ruled">
