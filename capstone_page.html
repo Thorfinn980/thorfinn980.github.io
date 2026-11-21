@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="assets/project-media.css">
   <link rel="stylesheet" href="assets/shiftops.css">
   <script src="assets/project-media.js" defer></script>
-  <link rel="stylesheet" href="assets/showcase.css">
-  <script src="assets/school.js" defer></script>
+  <link rel="stylesheet" href="assets/showcase.css?v=shoals2">
+  <script src="assets/school.js?v=shoals2" defer></script>
   <script src="assets/showcase.js" defer></script>
   <script src="assets/work-order.js" defer></script>
 </head>
@@ -39,20 +39,21 @@
       <a href="#gpu-blur">GPU Blur</a>
     </div>
     <article id="cast-and-current" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Game development</p><h2>Cast and Current</h2>
-        <p class="lead">A fishing simulation built around how fish move and respond to a lure.</p>
-        <p>In Godot, I built systems for schooling, obstacle avoidance, lure perception, and line tension. This browser demo focuses on the school. Each fish steers toward nearby fish, matches their heading, and leaves room to turn. Cast a lure to draw the school together.</p>
+      <div class="feature-copy"><p class="eyebrow">Simulation development</p><h2>Cast and Current</h2>
+        <p class="lead">I'm developing a 3D fishing simulation to make fish respond to an angler's setup as realistically as I can.</p>
+        <p>I'm building the interaction from both ends of the line. The fish decide whether to follow a lure based on how it's presented. A hookset and the tension on the line then shape the fight.</p>
+        <p>The browser demo is an early alpha prototype of the schooling AI. Watch fish split into smaller groups and rejoin when they swim close, or click the water to cast a lure. The project has since moved into 3D in Godot and is still in development.</p>
         <p class="stack">Godot / C# / Steering behaviors</p>
       </div>
-      <figure class="school" data-school aria-label="Cast and Current interactive fish school">
+      <figure class="school" data-school aria-label="Cast and Current early alpha fish schooling prototype">
           <div class="school-water">
             <img class="school-poster" src="assets/school-poster.png" width="864" height="540" alt="A school of silver fish in a green river pool between two gravel banks.">
             <img class="school-bed" src="assets/riverbed.jpg" width="864" height="540" loading="lazy" alt="">
             <canvas class="school-fish" role="img" aria-label="Live fish school. Click the water or press Enter to cast a lure."></canvas>
           </div>
-          <figcaption><span class="school-hint">Fish schooling study</span><div class="school-actions" hidden><button type="button" data-cast>Cast lure</button><button type="button" data-pause>Pause</button></div></figcaption>
+          <figcaption><div class="school-caption"><strong>Early alpha prototype</strong><span>The 3D fishing simulation is in development.</span></div><div class="school-actions" hidden><button type="button" data-cast>Cast lure</button><button type="button" data-pause>Pause</button></div></figcaption>
         </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#platformer" aria-label="Previous project, 2D platformer">&larr; 2D platformer</a><a href="#canopy" aria-label="Next project, Canopy">Canopy &rarr;</a></div>
+
     </article>
     <article id="canopy" class="feature media-feature ruled">
       <div class="feature-copy"><p class="eyebrow">Game development</p><h2 id="canopy-fall">Canopy</h2>
@@ -73,7 +74,7 @@
           <a href="assets/canopy-replay.gif" data-caption="Two live dice rolls on the shared table." data-alt="A die rolls across the map, followed by a pair of six-sided dice." class="replay-link">Play dice replay</a>
         </div>
       </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#cast-and-current" aria-label="Previous project, Cast and Current">&larr; Cast and Current</a><a href="#linekeeper" aria-label="Next project, LineKeeper">LineKeeper &rarr;</a></div>
+
     </article>
     <article id="linekeeper" class="feature ruled shiftops-feature">
       <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>LineKeeper</h2>
@@ -110,7 +111,7 @@
           <p>Follow a conveyor repair from the dashboard through the technician’s completion note. Silent recording.</p>
         </details>
       </div>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#canopy" aria-label="Previous project, Canopy">&larr; Canopy</a><a href="#projectw" aria-label="Next project, projectW">projectW &rarr;</a></div>
+
     </article>
     <article id="projectw" class="feature media-feature ruled">
       <div class="feature-copy"><p class="eyebrow">Game development</p><h2>projectW</h2>
@@ -123,7 +124,7 @@
         <video controls playsinline preload="metadata" width="1136" height="608" poster="assets/projectw-poster.jpg" aria-label="projectW gameplay"><source src="assets/projectw-gameplay.mp4" type="video/mp4"><a href="assets/projectw-gameplay.mp4">Watch projectW gameplay</a></video>
         <figcaption>Combat prototype <span aria-hidden="true">·</span> 13 seconds <span aria-hidden="true">·</span> Silent gameplay</figcaption>
       </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#linekeeper" aria-label="Previous project, LineKeeper">&larr; LineKeeper</a><a href="#campus-swap" aria-label="Next project, Campus Swap">Campus Swap &rarr;</a></div>
+
     </article>
     <article id="campus-swap" class="feature media-feature ruled">
       <div class="feature-copy"><p class="eyebrow">Web development</p><h2>Campus Swap</h2>
@@ -141,7 +142,7 @@
           <a href="assets/campus-item.jpg" data-caption="A buyer can contact the seller from the listing." data-alt="Winter coat detail showing its price, seller information, and message button.">Item detail</a>
         </div>
       </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#projectw" aria-label="Previous project, projectW">&larr; projectW</a><a href="#fomo" aria-label="Next project, FOMO">FOMO &rarr;</a></div>
+
     </article>
     <article id="fomo" class="feature media-feature ruled">
       <div class="feature-copy"><p class="eyebrow">Web development</p><h2>FOMO</h2>
@@ -161,7 +162,7 @@
           <a href="assets/fomo-community.jpg" data-caption="The activity feed shows which local events people are saving." data-alt="FOMO community activity, weekend event counts, and organizer tools.">Community</a>
         </div>
       </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#campus-swap" aria-label="Previous project, Campus Swap">&larr; Campus Swap</a><a href="#loan-shark" aria-label="Next project, Loan Shark">Loan Shark &rarr;</a></div>
+
     </article>
     <article id="loan-shark" class="feature media-feature ruled">
       <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>Loan Shark</h2>
@@ -177,17 +178,17 @@
           <a href="assets/loanshark-design.jpg" data-caption="The sign-in and account creation designs in Figma." data-alt="Two Loan Shark mobile sign-in designs beside their color palette.">Sign-in design</a>
         </div>
       </figure>
-    <div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#fomo" aria-label="Previous project, FOMO">&larr; FOMO</a><a href="#gpu-blur" aria-label="Next project, GPU Blur">GPU Blur &rarr;</a></div>
+
     </article>
     <section class="archive ruled" aria-labelledby="archive-title">
       <div class="section-top"><h2 id="archive-title">More projects</h2></div>
-      <details id="gpu-blur" open><summary><span>GPU Blur</span><span class="row-meta">Parallel computing</span></summary><div class="detail-copy"><p>I built an image blur in CUDA and benchmarked it against a serial CPU implementation. A two-dimensional grid of GPU threads computes the output pixels in parallel, with each thread sampling the neighboring pixels needed for the blur.</p><p class="stack">CUDA / Image processing / CPU benchmarking</p></div><div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#loan-shark" aria-label="Previous project, Loan Shark">&larr; Loan Shark</a><a href="#letum" aria-label="Next project, LETUM">LETUM &rarr;</a></div>
+      <details id="gpu-blur" open><summary><span>GPU Blur</span><span class="row-meta">Parallel computing</span></summary><div class="detail-copy"><p>I built an image blur in CUDA and benchmarked it against a serial CPU implementation. A two-dimensional grid of GPU threads computes the output pixels in parallel, with each thread sampling the neighboring pixels needed for the blur.</p><p class="stack">CUDA / Image processing / CPU benchmarking</p></div>
     </details>
-      <details id="letum"><summary><span>LETUM</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A co-op survival prototype. I've been working on interactions that have to agree across players, including shared storage, inventory pickups, and doors that remember their state when the world reloads.</p><p class="stack">Unreal Engine / C++</p></div><div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#gpu-blur" aria-label="Previous project, GPU Blur">&larr; GPU Blur</a><a href="#self-finance" aria-label="Next project, Self Finance">Self Finance &rarr;</a></div>
+      <details id="letum"><summary><span>LETUM</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A co-op survival prototype. I've been working on interactions that have to agree across players, including shared storage, inventory pickups, and doors that remember their state when the world reloads.</p><p class="stack">Unreal Engine / C++</p></div>
     </details>
-      <details id="self-finance"><summary><span>Self Finance</span><span class="row-meta">Web development</span></summary><div class="detail-copy"><p>A stock research dashboard that brings historical prices and related news into a single company search. I integrated the market data API and built the charts and responsive interface.</p><p class="stack">Python / Flask / Alpha Vantage</p></div><div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#letum" aria-label="Previous project, LETUM">&larr; LETUM</a><a href="#platformer" aria-label="Next project, 2D platformer">2D platformer &rarr;</a></div>
+      <details id="self-finance"><summary><span>Self Finance</span><span class="row-meta">Web development</span></summary><div class="detail-copy"><p>A stock research dashboard that brings historical prices and related news into a single company search. I integrated the market data API and built the charts and responsive interface.</p><p class="stack">Python / Flask / Alpha Vantage</p></div>
     </details>
-      <details id="platformer"><summary><span>2D platformer</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A side-scroller built with JavaFX, OpenGL, and Box2D. I worked on enemy state machines and resource loading so the physics, levels, and audio could run together smoothly.</p><p class="stack">Java / Box2D / Tiled</p></div><div class="project-cycle" role="navigation" aria-label="Cycle projects"><a href="#self-finance" aria-label="Previous project, Self Finance">&larr; Self Finance</a><a href="#cast-and-current" aria-label="Next project, Cast and Current">Cast and Current &rarr;</a></div>
+      <details id="platformer"><summary><span>2D platformer</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A side-scroller built with JavaFX, OpenGL, and Box2D. I worked on enemy state machines and resource loading so the physics, levels, and audio could run together smoothly.</p><p class="stack">Java / Box2D / Tiled</p></div>
     </details>
     </section>
   </main>
