@@ -147,6 +147,13 @@
         p.px=w*.5+(c*p.x-s*p.y)*k;
         p.py=h*(flat?.50:.61)+((s*p.x+c*p.y)*(flat?.87:.43)-(flat?0:p.z*.86))*k;
       }
+      function side(a,b,color) {
+        // Only the two facing edges are visible. Their tops share the mesh projection.
+        const bottomA=a.py+(a.z+.10)*.86*k, bottomB=b.py+(b.z+.10)*.86*k;
+        ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);
+        ctx.lineTo(b.px,bottomB);ctx.lineTo(a.px,bottomA);ctx.closePath();
+        ctx.fillStyle=color;ctx.fill();ctx.strokeStyle=color;ctx.lineWidth=.6;ctx.stroke();
+      }
       for(let row=0;row<n;row++) for(let col=0;col<n;col++) {
         const j=c>=0?row:n-1-row, i=s>=0?col:n-1-col, cell=cells[j*n+i];
         ctx.beginPath(); ctx.moveTo(cell.p[0].px,cell.p[0].py);
@@ -158,6 +165,12 @@
           if(v%2===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
         }
         ctx.strokeStyle='#85ade0';ctx.lineWidth=.58;ctx.stroke();
+        if(!flat && row===n-1) {
+          const edge=c>=0?2:0;side(cell.p[edge],cell.p[edge+1],'#17376c');
+        }
+        if(!flat && col===n-1) {
+          const edge=s>=0?1:3;side(cell.p[edge],cell.p[(edge+1)%4],'#142c58');
+        }
       }
     };
   }
