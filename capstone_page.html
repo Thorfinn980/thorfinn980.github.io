@@ -13,7 +13,6 @@
   <script src="assets/project-media.js" defer></script>
   <link rel="stylesheet" href="assets/showcase.css?v=shoals2">
   <script src="assets/school.js?v=shoals2" defer></script>
-  <script src="assets/showcase.js" defer></script>
   <script src="assets/work-order.js" defer></script>
 </head>
 <body>
@@ -24,9 +23,7 @@
   </header>
   <main id="main" class="wrap" tabindex="-1">
     <header class="page-heading">
-      <p class="eyebrow role"><span class="role-mark" aria-hidden="true"></span>Software engineering</p>
       <h1>Projects<span class="accent">.</span></h1>
-      <p>Mobile tools, web applications, and game systems. Explore the interfaces and try the demos.</p>
     </header>
     <div class="project-jumps" role="navigation" aria-label="Jump to a project">
       <a href="#cast-and-current">Cast and Current</a>
@@ -39,11 +36,9 @@
       <a href="#gpu-blur">GPU Blur</a>
     </div>
     <article id="cast-and-current" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Simulation development</p><h2>Cast and Current</h2>
-        <p class="lead">I'm developing a 3D fishing simulation to make fish respond to an angler's setup as realistically as I can.</p>
-        <p>I'm building the interaction from both ends of the line. The fish decide whether to follow a lure based on how it's presented. A hookset and the tension on the line then shape the fight.</p>
-        <p>The browser demo is an early alpha prototype of the schooling AI. Watch fish split into smaller groups and rejoin when they swim close, or click the water to cast a lure. The project has since moved into 3D in Godot and is still in development.</p>
-        <p class="stack">Godot / C# / Steering behaviors</p>
+      <div class="feature-copy">
+        <h2>Cast and Current</h2>
+        <p class="lead">A 3D fishing simulator where fish react to how you move your lure.</p>
       </div>
       <figure class="school" data-school aria-label="Cast and Current early alpha fish schooling prototype">
           <div class="school-water">
@@ -51,24 +46,23 @@
             <img class="school-bed" src="assets/riverbed.jpg" width="864" height="540" loading="lazy" alt="">
             <canvas class="school-fish" role="img" aria-label="Live fish school. Click the water or press Enter to cast a lure."></canvas>
           </div>
-          <figcaption><div class="school-caption"><strong>Early alpha prototype</strong><span>The 3D fishing simulation is in development.</span></div><div class="school-actions" hidden><button type="button" data-cast>Cast lure</button><button type="button" data-pause>Pause</button></div></figcaption>
+          <figcaption><div class="school-caption"><strong>Early alpha demo</strong><span>3D version in development</span></div><div class="school-actions" hidden><button type="button" data-cast>Cast lure</button><button type="button" data-pause>Pause</button></div></figcaption>
         </figure>
 
     </article>
     <article id="canopy" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Game development</p><h2 id="canopy-fall">Canopy</h2>
-        <p class="lead">A cross-platform tabletop for running tactical role-playing games together.</p>
-        <p>Players join by code, move tokens on a contour map, and roll dice together. The operator sheet keeps equipment and actions within reach while the table tracks whose turn comes next.</p>
-        <p class="stack">Tabletop systems / Interaction design</p>
+      <div class="feature-copy">
+        <h2 id="canopy-fall">Canopy</h2>
+        <p class="lead">A cross-platform tabletop where friends move pieces and roll dice on a shared map.</p>
       </div>
       <figure class="gallery" data-gallery aria-label="Canopy gallery">
         <a class="gallery-stage" href="assets/canopy-map.jpg" aria-label="Open full-size image"><img src="assets/canopy-map.jpg" width="1904" height="920" loading="lazy" alt="A red twenty-sided die above blue elevation contours and a lowland drainage channel."></a>
-        <figcaption aria-live="polite">A d20 roll on the contour map.</figcaption>
+        <figcaption aria-live="polite">A dice roll on the map.</figcaption>
         <div class="gallery-choices" role="group" aria-label="Canopy media">
-          <a href="assets/canopy-map.jpg" data-caption="A d20 roll on the contour map." data-alt="A red twenty-sided die above blue elevation contours and a lowland drainage channel." aria-current="true">Terrain</a>
+          <a href="assets/canopy-map.jpg" data-caption="A dice roll on the map." data-alt="A red twenty-sided die above blue elevation contours and a lowland drainage channel." aria-current="true">Terrain</a>
           <a href="assets/canopy-lobby.jpg" data-caption="Create a table or join a game by code." data-alt="Create Game and Join Game forms for the shared tabletop.">Lobby</a>
-          <a href="assets/canopy-operator.jpg" data-caption="Equipment, turn order, and recent rolls share one view." data-alt="Operator sheet beside the tactical grid, equipment controls, and shared dice history.">Equipment</a>
-          <a href="assets/canopy-roll.jpg" data-caption="Two dice resolve to a total on the table." data-alt="Two green six-sided dice and their total above the tabletop dice tray.">Roll result</a>
+          <a href="assets/canopy-operator.jpg" data-caption="Equipment, turn order, and dice rolls." data-alt="Operator sheet beside the tactical grid, equipment controls, and shared dice history.">Equipment</a>
+          <a href="assets/canopy-roll.jpg" data-caption="Two dice and their total." data-alt="Two green six-sided dice and their total above the tabletop dice tray.">Roll result</a>
           <a href="assets/canopy-dice-red.jpg" data-caption="The red polyhedral dice set." data-alt="Close-up of red polyhedral dice on the grid.">Red dice</a>
           <a href="assets/canopy-dice-blue.jpg" data-caption="The blue polyhedral dice set." data-alt="Close-up of blue dice with numbered faces on the tabletop.">Blue dice</a>
           <a href="assets/canopy-replay.gif" data-caption="Two live dice rolls on the shared table." data-alt="A die rolls across the map, followed by a pair of six-sided dice." class="replay-link">Play dice replay</a>
@@ -77,13 +71,10 @@
 
     </article>
     <article id="linekeeper" class="feature ruled shiftops-feature">
-      <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>LineKeeper</h2>
-      <p class="lead">ShiftOps is the mobile app I built for maintenance technicians.</p>
-      <p>A technician can report a fault, start a repair, and leave a completion note for the next shift. The React Native client talks to a Flask API backed by SQLite.</p>
-      <p>I made the status change and its history entry save together. That keeps the maintenance record consistent if a request fails partway through an update.</p>
-      <p class="stack">React Native / TypeScript / Flask / SQLite</p>
-      <a class="text-link" href="https://github.com/Thorfinn980/Line-Keeper">View source on GitHub</a>
-
+      <div class="feature-copy">
+        <h2>LineKeeper</h2>
+        <p class="lead">ShiftOps helps maintenance crews report broken equipment, track repairs, and leave notes for the next shift.</p>
+        <a class="text-link" href="https://github.com/Thorfinn980/Line-Keeper">View code</a>
       </div>
       <div class="shiftops-media">
         <div class="shiftops-screens" role="group" aria-label="ShiftOps app screenshots">
@@ -114,42 +105,39 @@
 
     </article>
     <article id="projectw" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Game development</p><h2>projectW</h2>
-        <p class="lead">A fighting game built with a student team in Godot.</p>
-        <p>I led the team and worked on player controls and enemy state machines. The clip shows how movement, dodges, and attacks play out in the arena.</p>
-        <p class="stack">Godot / GDScript</p>
-        <a class="text-link" href="https://github.com/Thorfinn980/ProjectW">View source on GitHub</a>
+      <div class="feature-copy">
+        <h2>projectW</h2>
+        <p class="lead">A fighting game where you dodge enemy attacks and time your counterattacks.</p>
+        <a class="text-link" href="https://github.com/Thorfinn980/ProjectW">View code</a>
       </div>
       <figure class="game-film">
         <video controls playsinline preload="metadata" width="1136" height="608" poster="assets/projectw-poster.jpg" aria-label="projectW gameplay"><source src="assets/projectw-gameplay.mp4" type="video/mp4"><a href="assets/projectw-gameplay.mp4">Watch projectW gameplay</a></video>
-        <figcaption>Combat prototype <span aria-hidden="true">·</span> 13 seconds <span aria-hidden="true">·</span> Silent gameplay</figcaption>
+        <figcaption>13 seconds of gameplay &middot; No audio</figcaption>
       </figure>
 
     </article>
     <article id="campus-swap" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Web development</p><h2>Campus Swap</h2>
-        <p class="lead">A marketplace for buying and selling on campus.</p>
-        <p>I led the team that built Campus Swap for our senior capstone. I implemented the sign-in flow, protected routes, and admin dashboard. Students could browse listings while administrators had a separate place to manage the marketplace.</p>
-        <p class="stack">React / Vite</p>
-        <a class="text-link" href="https://github.com/Thorfinn980/Campus-Swap">View source on GitHub</a>
+      <div class="feature-copy">
+        <h2>Campus Swap</h2>
+        <p class="lead">I led our senior capstone team in building a marketplace where students buy and sell used items on campus.</p>
+        <a class="text-link" href="https://github.com/Thorfinn980/Campus-Swap">View code</a>
       </div>
       <figure class="gallery" data-gallery aria-label="Campus Swap gallery">
         <a class="gallery-stage" href="assets/campus-market.jpg" aria-label="Open full-size image"><img src="assets/campus-market.jpg" width="1280" height="650" loading="lazy" alt="Campus Swap search page with category and price filters."></a>
         <figcaption aria-live="polite">Students can search by item, category, and price.</figcaption>
         <div class="gallery-choices" role="group" aria-label="Campus Swap media">
           <a href="assets/campus-market.jpg" data-caption="Students can search by item, category, and price." data-alt="Campus Swap search page with category and price filters." aria-current="true">Marketplace</a>
-          <a href="assets/campus-listings.jpg" data-caption="Listing cards put the price, seller, and pickup area together." data-alt="Four student listings with photos, prices, and pickup locations.">Listings</a>
-          <a href="assets/campus-item.jpg" data-caption="A buyer can contact the seller from the listing." data-alt="Winter coat detail showing its price, seller information, and message button.">Item detail</a>
+          <a href="assets/campus-listings.jpg" data-caption="See the price, seller, and pickup location." data-alt="Four student listings with photos, prices, and pickup locations.">Listings</a>
+          <a href="assets/campus-item.jpg" data-caption="Message the seller from a listing." data-alt="Winter coat detail showing its price, seller information, and message button.">Item detail</a>
         </div>
       </figure>
 
     </article>
     <article id="fomo" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Web development</p><h2>FOMO</h2>
-        <p class="lead">Local event discovery, from the first search to the ticket at the door.</p>
-        <p>Our team built an event platform where people can browse nearby plans, see what others are saving, and reserve tickets. Confirmed bookings appear together in a ticket wallet.</p>
-        <p class="stack">Team project / Event discovery</p>
-        <a class="text-link" href="https://github.com/Thorfinn980/FOMO">View source on GitHub</a>
+      <div class="feature-copy">
+        <h2>FOMO</h2>
+        <p class="lead">Find local events, book tickets, and pull them up at the door.</p>
+        <a class="text-link" href="https://github.com/Thorfinn980/FOMO">View code</a>
       </div>
       <figure class="gallery" data-gallery aria-label="FOMO gallery">
         <a class="gallery-stage" href="assets/fomo-home.jpg" aria-label="Open full-size image"><img src="assets/fomo-home.jpg" width="1280" height="670" loading="lazy" alt="FOMO home screen with local event search and category filters."></a>
@@ -157,24 +145,23 @@
         <div class="gallery-choices" role="group" aria-label="FOMO media">
           <a href="assets/fomo-home.jpg" data-caption="Search for an event by location and date." data-alt="FOMO home screen with local event search and category filters." aria-current="true">Discovery</a>
           <a href="assets/fomo-events.jpg" data-caption="Local events with dates, distance, and ticket prices." data-alt="Three nearby events with ticket prices and availability.">Nearby events</a>
-          <a href="assets/fomo-checkout.jpg" data-caption="Reserve tickets and see the confirmation in the same flow." data-alt="Ticket reservation form and confirmation for a local demo day.">Checkout</a>
-          <a href="assets/fomo-tickets.jpg" data-caption="Confirmed bookings stay together in the ticket wallet." data-alt="Two event tickets with confirmation codes and venue details.">Ticket wallet</a>
+          <a href="assets/fomo-checkout.jpg" data-caption="Reserve tickets and get a confirmation." data-alt="Ticket reservation form and confirmation for a local demo day.">Checkout</a>
+          <a href="assets/fomo-tickets.jpg" data-caption="All your tickets in one place." data-alt="Two event tickets with confirmation codes and venue details.">Ticket wallet</a>
           <a href="assets/fomo-community.jpg" data-caption="The activity feed shows which local events people are saving." data-alt="FOMO community activity, weekend event counts, and organizer tools.">Community</a>
         </div>
       </figure>
 
     </article>
     <article id="loan-shark" class="feature media-feature ruled">
-      <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>Loan Shark</h2>
-        <p class="lead">A budget tracker for seeing where the money went.</p>
-        <p>I prototyped the interface in Figma, then built expense entry and categorization for our database class project. The account view brings balances, recent transactions, and monthly spending together.</p>
-        <p class="stack">Android / Figma</p>
+      <div class="feature-copy">
+        <h2>Loan Shark</h2>
+        <p class="lead">A mobile budget tracker that shows your balances, recent purchases, and spending by month.</p>
       </div>
       <figure class="gallery" data-gallery aria-label="Loan Shark gallery">
         <a class="gallery-stage" href="assets/loanshark-overview.jpg" aria-label="Open full-size image"><img src="assets/loanshark-overview.jpg" width="1170" height="835" loading="lazy" alt="Loan Shark mobile designs for accounts, monthly totals, and an expense chart."></a>
-        <figcaption aria-live="polite">The account overview and monthly spending views.</figcaption>
+        <figcaption aria-live="polite">Balances and monthly spending.</figcaption>
         <div class="gallery-choices" role="group" aria-label="Loan Shark media">
-          <a href="assets/loanshark-overview.jpg" data-caption="The account overview and monthly spending views." data-alt="Loan Shark mobile designs for accounts, monthly totals, and an expense chart." aria-current="true">Accounts</a>
+          <a href="assets/loanshark-overview.jpg" data-caption="Balances and monthly spending." data-alt="Loan Shark mobile designs for accounts, monthly totals, and an expense chart." aria-current="true">Accounts</a>
           <a href="assets/loanshark-design.jpg" data-caption="The sign-in and account creation designs in Figma." data-alt="Two Loan Shark mobile sign-in designs beside their color palette.">Sign-in design</a>
         </div>
       </figure>
@@ -182,14 +169,12 @@
     </article>
     <section class="archive ruled" aria-labelledby="archive-title">
       <div class="section-top"><h2 id="archive-title">More projects</h2></div>
-      <details id="gpu-blur" open><summary><span>GPU Blur</span><span class="row-meta">Parallel computing</span></summary><div class="detail-copy"><p>I built an image blur in CUDA and benchmarked it against a serial CPU implementation. A two-dimensional grid of GPU threads computes the output pixels in parallel, with each thread sampling the neighboring pixels needed for the blur.</p><p class="stack">CUDA / Image processing / CPU benchmarking</p></div>
-    </details>
-      <details id="letum"><summary><span>LETUM</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A co-op survival prototype. I've been working on interactions that have to agree across players, including shared storage, inventory pickups, and doors that remember their state when the world reloads.</p><p class="stack">Unreal Engine / C++</p></div>
-    </details>
-      <details id="self-finance"><summary><span>Self Finance</span><span class="row-meta">Web development</span></summary><div class="detail-copy"><p>A stock research dashboard that brings historical prices and related news into a single company search. I integrated the market data API and built the charts and responsive interface.</p><p class="stack">Python / Flask / Alpha Vantage</p></div>
-    </details>
-      <details id="platformer"><summary><span>2D platformer</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A side-scroller built with JavaFX, OpenGL, and Box2D. I worked on enemy state machines and resource loading so the physics, levels, and audio could run together smoothly.</p><p class="stack">Java / Box2D / Tiled</p></div>
-    </details>
+      <dl class="tool-list">
+        <div id="gpu-blur"><dt>GPU Blur</dt><dd>Blurs a photo and compares how long the same job takes on a graphics card and a CPU.</dd></div>
+        <div id="letum"><dt>LETUM</dt><dd>A co-op survival prototype where players scavenge supplies, share gear, and return to the world they saved.</dd></div>
+        <div id="self-finance"><dt>Self Finance</dt><dd>Look up a company to see its stock price history and recent news in one place.</dd></div>
+        <div id="platformer"><dt>2D platformer</dt><dd>A side-scrolling game where you jump between platforms and avoid enemies.</dd></div>
+      </dl>
     </section>
   </main>
   <footer class="footer wrap"><span>Kevin Xiong</span><a href="https://github.com/Thorfinn980">GitHub profile</a></footer>
