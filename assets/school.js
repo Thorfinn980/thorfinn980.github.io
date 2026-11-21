@@ -13,7 +13,6 @@
     const ctx = canvas.getContext('2d');
     if (!ctx) continue;
     const pauseButton = figure.querySelector('[data-pause]');
-    const hint = figure.querySelector('.school-hint');
     let seed = 731;
     function random() {
       seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
@@ -23,29 +22,74 @@
       const a = random() * Math.PI * 2, r = Math.sqrt(random());
       return {x: 432 + 207 * r * Math.cos(a), y: 270 + 92 * r * Math.sin(a),
         vx: 30 + 15 * random(), vy: -10 + 18 * random(), size: .65 + .5 * random(),
-        phase: random() * 6.28, shade: ['#bec5a7','#9fb6a1','#d6c59c'][i % 3]};
+        phase: random() * 6.28, shade: ['#bec5a7','#9fb6a1','#d6c59c'][i % 3], shoal: 0};
     });
     const ax = new Float32Array(count), ay = new Float32Array(count);
     let time = 0, lure = null, raf = 0, last = 0, inView = false, ready = false, paused = motion.matches;
+    let divided = false, nextSplit = 1.5, forageUntil = 0, mergeAfter = 0;
+    let spread = 0, branchY = 0, timeTogether = 0;
+
+    function updateShoals(dt) {
+      if (!divided && time >= nextSplit) {
+        // Split spatial neighbors together, so fish can peel away without crossing the entire school.
+        const slope = random() - .5;
+        const ordered = fish.slice().sort((a,b) => (a.x - b.x) + slope * (a.y - b.y));
+        const cut = Math.round(count * (.38 + random() * .24));
+        ordered.forEach((f,i) => { f.shoal = i < cut ? -1 : 1; });
+        divided = true;
+        branchY = (random() < .5 ? -1 : 1) * (40 + random() * 35);
+        forageUntil = time + 8 + random() * 6;
+        mergeAfter = time + 5;
+        timeTogether = 0;
+      }
+      if (!divided) return;
+      const targetSpread = time < forageUntil ? 1 : 0;
+      spread += (targetSpread - spread) * (1 - Math.exp(-dt * .9));
+      if (time < mergeAfter) return;
+
+      // Ending a foraging excursion brings the two routes together. Membership only
+      // changes when the actual shoals have stayed within social range of each other.
+      let leftX = 0, leftY = 0, leftCount = 0, rightX = 0, rightY = 0;
+      for (const f of fish) {
+        if (f.shoal < 0) { leftX += f.x; leftY += f.y; leftCount++; }
+        else { rightX += f.x; rightY += f.y; }
+      }
+      const rightCount = count - leftCount;
+      const distance = Math.hypot(leftX / leftCount - rightX / rightCount,
+        leftY / leftCount - rightY / rightCount);
+      timeTogether = distance < 78 ? timeTogether + dt : 0;
+      if (timeTogether >= .65) {
+        for (const f of fish) f.shoal = 0;
+        divided = false;
+        spread = 0;
+        nextSplit = time + 5 + random() * 6;
+      }
+    }
+
     function simulate(dt) {
       time += dt;
       if (lure && (lure.age += dt) > 7) lure = null;
-      const driftX = width * .5 + 215 * Math.cos(time * .13);
-      const driftY = height * .5 + 75 * Math.sin(time * .19);
+      updateShoals(dt);
+      const driftX = width * .5 + 102 * Math.sin(time * .14);
+      const driftY = height * .5 + 46 * Math.sin(time * .17);
       for (let i = 0; i < fish.length; i++) {
         const f = fish[i];
         let near = 0, cx = 0, cy = 0, alignX = 0, alignY = 0, sx = 0, sy = 0;
         for (const n of fish) {
           const dx = n.x - f.x, dy = n.y - f.y, d2 = dx * dx + dy * dy;
           if (d2 < .01 || d2 > 85 * 85) continue;
-          near++; cx += dx; cy += dy; alignX += n.vx - f.vx; alignY += n.vy - f.vy;
+          if (f.shoal === n.shoal) {
+            near++; cx += dx; cy += dy; alignX += n.vx - f.vx; alignY += n.vy - f.vy;
+          }
           if (d2 < 31 * 31) {
             const d = Math.sqrt(d2), weight = (1 - d / 31) / d;
             sx -= dx * weight; sy -= dy * weight;
           }
         }
-        let fx = sx * 84 + (driftX - f.x) * .09;
-        let fy = sy * 84 + (driftY - f.y) * .15 + 3 * Math.sin(f.x / 90 + time * .3);
+        const offset = f.shoal * spread;
+        let fx = sx * 84 + (driftX + 215 * offset - f.x) * .27 - f.vx * .64;
+        let fy = sy * 84 + (driftY + branchY * offset - f.y) * .32 - f.vy * .64
+          + 3 * Math.sin(f.x / 90 + time * .3);
         if (near) {
           fx += (cx * .57 + alignX * .98) / near;
           fy += (cy * .57 + alignY * .98) / near;
@@ -142,7 +186,7 @@
       ready = true;
       figure.classList.add('school-ready');
       figure.querySelector('.school-actions').hidden = false;
-      canvas.tabIndex = 0; hint.textContent = 'Click the water to cast';
+      canvas.tabIndex = 0;
       resize(); sync();
     }
     backdrop.addEventListener('load', start, {once: true});

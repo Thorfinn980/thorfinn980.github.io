@@ -26,14 +26,10 @@
 .school-fish { cursor: crosshair; touch-action: manipulation; }
 .school-fish:focus-visible { outline-offset: -4px; }
 .school figcaption { display: flex; align-items: center; justify-content: space-between; gap: 6px; min-height: 46px; padding: 6px 10px 6px 14px; font: .77rem/1.4 var(--mono); color: #365649; }
+.school-caption { display: grid; gap: 2px; }
+.school-caption strong { color: #264637; }
 .school-actions button { white-space: nowrap; font: inherit; min-height: 34px; }
 .featured-cards { grid-template-columns: repeat(3,minmax(0,1fr)); }
-.feature:has(> .project-cycle) { row-gap: clamp(22px,3vw,40px); }
-.project-cycle { grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 20px; border-top: 1px solid var(--line); padding-top: 10px; }
-.project-cycle a { padding: 5px 0; color: var(--muted); font: .78rem/1.4 var(--mono); }
-.project-cycle a:hover { color: var(--accent); text-decoration: underline; }
-.project-cycle a:last-child { margin-left: auto; }
-details .project-cycle { margin-bottom: 1rem; }
 @media (max-width: 640px) {
   .featured-cards { grid-template-columns: 1fr; }
   .school figcaption { padding-left: 9px; font-size: .72rem; }
