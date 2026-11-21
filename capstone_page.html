@@ -1,418 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(
-                135deg,
-                #050b18 0%,
-                #0a1f44 35%,
-                #2a1b6f 65%,
-                #4a148c 100%
-            );
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        nav {
-            background: #2d3748;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 25px;
-            border-radius: 25px;
-            background: #4a5568;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            background: #667eea;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        nav a.active {
-            background: #667eea;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        h1 {
-            color: #2d3748;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-
-        .subtitle {
-            color: #718096;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            color: #2d3748;
-        }
-
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-            border-color: #667eea;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .project-title {
-            flex: 1;
-        }
-
-        .project-title h2 {
-            color: #2d3748;
-            font-size: 1.8em;
-            margin-bottom: 8px;
-        }
-
-        .project-date {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 0.95em;
-            background: #667eea15;
-            padding: 6px 15px;
-            border-radius: 20px;
-        }
-
-        .project-description {
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.05em;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .tech-tag {
-            background: #edf2f7;
-            color: #2d3748;
-            padding: 6px 15px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 500;
-            border: 1px solid #cbd5e0;
-        }
-
-        .features {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .features h3 {
-            color: #2d3748;
-            font-size: 1.1em;
-            margin-bottom: 12px;
-        }
-
-        .features ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .features li {
-            color: #4a5568;
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .features li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 6px 15px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        .status-current {
-            background: #48bb78;
-            color: white;
-        }
-
-        .status-completed {
-            background: #4299e1;
-            color: white;
-        }
-
-        footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .project-header {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta name="description" content="Selected software and game development projects by Kevin Xiong, including LineKeeper, Canopy Fall, and Campus Swap.">
+  <title>Projects | Kevin Xiong</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/work-order.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">About Me</a>
-            <a href="capstone_page.html" class="active">My Journey</a>
-            <a href="hobbies_page.html">Hobbies & Interests</a>
-        </nav>
-
-        <div class="content">
-            <h1>My Projects</h1>
-            <p class="subtitle">A showcase of my development journey</p>
-
-            <div class="intro">
-                <p>Throughout my academic career, I've worked on various projects that demonstrate my growth as a developer. From game development to web applications, each project has taught me valuable lessons in software engineering, teamwork, and problem-solving.</p>
-            </div>
-
-            <div class="timeline">
-                <!-- Loan Shark Project -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h2>Loan Shark Finance App</h2>
-                        </div>
-                    </div>
-
-                    <p class="project-description">
-                        An Android application designed to help users track their budget with an intuitive interface similar to MyFitnessPal. This app makes personal finance management accessible and user-friendly. Developed during Database class, now turned into a full fledge app afterwards.
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">UI/UX Design</span>
-                        <span class="tech-tag">Agile Development</span>
-                    </div>
-
-                    <div class="features">
-                        <h3>Key Features & Achievements:</h3>
-                        <ul>
-                            <li>Designed and prototyped a mock UI/UX using Figma, ensuring intuitive navigation and ease of use</li>
-                            <li>Created a budget tracking system allowing users to input, categorize, and monitor their expenses</li>
-                            <li>Implemented real-time data entry validation and error handling to ensure accurate user inputs and prevent oversights</li>
-                            <li>Utilized agile development practices to iterate on features based on classmate feedback</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Self Finance Project -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h2>Self Finance </h2>
-                        </div>
-                    </div>
-
-                    <p class="project-description">
-                        A comprehensive stock information website that empowers users to search for traded companies and access relevant financial news and analytics in real-time.
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">AlphaVantage API</span>
-                    </div>
-
-                    <div class="features">
-                        <h3>Key Features & Achievements:</h3>
-                        <ul>
-                            <li>Designed and developed UI/UX using HTML, CSS, Python, and Flask</li>
-                            <li>Integrated AlphaVantage API to pull real-time and historical stock market data</li>
-                            <li>Created dynamic graphs and data points using Bootstrap to display stock trends and analytics</li>
-                            <li>Built a responsive interface for seamless user experience across devices</li>
-                        </ul>
-                    </div>
-
-                    
-                </div>
-
-                <!-- Sophomore Project Game -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h2>Sophomore Project Game </h2>
-                        </div>
-                    </div>
-
-                    <p class="project-description">
-                        A fighting game application where players engage in tactical combat against opponents using a combination of dodges and attacks. This project showcased my leadership and technical skills.
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pygame</span>
-                        <span class="tech-tag">FSM Logic</span>
-                        <span class="tech-tag">Scrum Framework</span>
-                        <span class="tech-tag">Team Leadership</span>
-                    </div>
-
-                    <div class="features">
-                        <h3>Key Features & Achievements:</h3>
-                        <ul>
-                            <li>Led a team of underclassmen as the lead developer, managing the integration of the Scrum framework to guide project development</li>
-                            <li>Conducted team discussions to evaluate feature relevance, adjust project scope, and overcome challenges</li>
-                            <li>Implemented player controls and AI using Python and Finite State Machine logic</li>
-                            <li>Debugged and refactored the codebase to improve performance and maintainability</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2D Platformer Game -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h2>2D Platformer Game</h2>
-                        </div>
-                    </div>
-
-                    <p class="project-description">
-                        An engaging 2D platformer where players navigate challenging levels, fight enemies, and race to reach the finish line. This project deepened my understanding of game physics and AI development.
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">JavaFX</span>
-                        <span class="tech-tag">OpenGL</span>
-                        <span class="tech-tag">Box2D</span>
-                        <span class="tech-tag">SoundPool API</span>
-                        <span class="tech-tag">Tiled</span>
-                    </div>
-
-                    <div class="features">
-                        <h3>Key Features & Achievements:</h3>
-                        <ul>
-                            <li>Developed a 2D platformer in Java using JavaFX, OpenGL, Box2D, and SoundPool API</li>
-                            <li>Implemented Box2D physics engine and Tiled for realistic physics simulations</li>
-                            <li>Developed AI behaviors using finite state machines for enemies, creating a challenging game experience</li>
-                            <li>Optimized game performance by reducing memory overhead and efficiently managing resource loading</li>
-                        </ul>
-                    </div>
-
-                 
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>Kevin Xiong | Hosted on GitHub Pages</p>
-        </footer>
-    </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="brand" href="index.html" aria-label="Kevin Xiong, home"><span class="monogram" aria-hidden="true">KX</span><span>Kevin Xiong</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a aria-current="page" href="capstone_page.html">Projects</a><a href="hobbies_page.html">About</a><a class="nav-github" href="https://github.com/Thorfinn980">GitHub</a></nav>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+    <header class="page-heading">
+      <p class="eyebrow role"><span class="role-mark" aria-hidden="true"></span>Software engineering</p>
+      <h1>Projects<span class="accent">.</span></h1>
+      <p>Mobile software, web applications, and game systems I’ve built.</p>
+    </header>
+    <article id="linekeeper" class="feature ruled">
+      <div class="feature-copy"><p class="eyebrow">Mobile development</p><h2>LineKeeper</h2>
+      <p class="lead">A work-order app for the technician on the floor.</p>
+      <p>A technician can report a fault, start a repair, and leave a completion note for the next shift. The React Native client talks to a Flask API backed by SQLite.</p>
+      <p>I made the status change and its history entry save together. That keeps the maintenance record consistent if a request fails partway through an update.</p>
+      <p class="stack">React Native / TypeScript / Flask / SQLite</p>
+      <a class="text-link" href="https://github.com/Thorfinn980/Line-Keeper">View source on GitHub</a></div>
+      <div class="demo" data-demo>
+        <div class="demo-top"><span class="demo-brand"><span class="rail-icon" aria-hidden="true"><i></i><i></i><i></i></span>LineKeeper</span><span>Workflow demo</span></div>
+        <h3>Conveyor stops intermittently</h3><p class="demo-asset">Packaging Conveyor A · Plant A</p>
+        <ol class="workflow" aria-label="Repair stages"><li aria-current="step">Open</li><li>In progress</li><li>Completed</li></ol>
+        <p class="demo-status" role="status">The operator reported two unexpected stops.</p>
+        <div class="note-area" hidden><label for="note">Completion note</label><textarea id="note" rows="2" maxlength="300" placeholder="What did you fix?"></textarea></div>
+        <div class="demo-controls" hidden><button type="button" class="button primary demo-action">Start repair</button><button class="text-link demo-reset" type="button" hidden>Reset demo</button></div>
+      </div>
+    </article>
+    <article id="canopy-fall" class="feature ruled">
+      <div class="feature-copy"><p class="eyebrow">Game development</p><h2>Canopy Fall</h2>
+      <p class="lead">A digital table for a tactical role-playing game.</p>
+      <p>I’m building a tabletop where players can place tokens, inspect equipment, and follow the turn order on a shared map.</p>
+      <p>The interface has to answer three questions at a glance. Whose turn is it? What can they do? Where will that action land?</p>
+      <p class="stack">Tabletop systems / Interaction design</p></div>
+      <figure class="tabletop-figure"><div class="screen-frame"><img src="assets/canopy-tabletop.jpg" width="1872" height="882" alt="Canopy Fall tabletop showing map tokens, the actions panel, and a highlighted turn timer."></div><figcaption>Turn queue and token actions in the prototype. <a class="text-link" href="assets/canopy-tabletop.jpg">Full image</a></figcaption></figure>
+    </article>
+    <section class="archive ruled" aria-labelledby="archive-title">
+      <div class="section-top"><h2 id="archive-title">More projects</h2></div>
+      <details><summary><span>Campus Swap</span><span class="row-meta">Web development</span></summary><div class="detail-copy"><p>For my capstone, I built the sign-in flow, protected routes, and an admin dashboard for a campus marketplace. Students and administrators needed different entry points into the same application.</p><p class="stack">React / Vite</p></div></details>
+      <details><summary><span>LETUM</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A co-op survival prototype. I’ve been working on interactions that have to agree across players, including shared storage, inventory pickups, and doors that remember their state when the world reloads.</p><p class="stack">Unreal Engine / C++</p></div></details>
+      <details><summary><span>Self Finance</span><span class="row-meta">Web development</span></summary><div class="detail-copy"><p>A stock research dashboard that brings historical prices and related news into a single company search. I integrated the market data API and built the charts and responsive interface.</p><p class="stack">Python / Flask / Alpha Vantage</p></div></details>
+      <details><summary><span>Loan Shark</span><span class="row-meta">Mobile development</span></summary><div class="detail-copy"><p>A budget tracker that grew out of a database class. I prototyped the interface in Figma, built expense entry and categorization, and added validation to catch mistakes as users type.</p><p class="stack">Android / Figma</p></div></details>
+      <details><summary><span>Fighting game</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>I led a student team building a fighting game with dodges and attacks. My work included player controls, enemy state machines, and helping the team decide what we could finish together.</p><p class="stack">Python / Pygame</p></div></details>
+      <details><summary><span>2D platformer</span><span class="row-meta">Game development</span></summary><div class="detail-copy"><p>A side-scroller built with JavaFX, OpenGL, and Box2D. I worked on enemy state machines and resource loading so the physics, levels, and audio could run together smoothly.</p><p class="stack">Java / Box2D / Tiled</p></div></details>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>Kevin Xiong</span><span>Michigan, USA</span><a href="https://github.com/Thorfinn980">GitHub profile</a></footer>
 </body>
 </html>

@@ -1,234 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-       body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background: linear-gradient(
-            135deg,
-            #050b18 0%,
-            #0a1f44 35%,
-            #2a1b6f 65%,
-            #4a148c 100%
-          );
-          min-height: 100vh;
-          padding: 20px;
-        }
-
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        nav {
-            background: #2d3748;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 25px;
-            border-radius: 25px;
-            background: #4a5568;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            background: #667eea;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        nav a.active {
-            background: #667eea;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        h1 {
-            color: #2d3748;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-
-        .subtitle {
-            color: #718096;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .section {
-            margin-bottom: 35px;
-        }
-
-        h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill-card {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-card h3 {
-            color: #2d3748;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .skill-card p {
-            color: #4a5568;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        .learning-list {
-            background: #edf2f7;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .learning-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .learning-list li {
-            padding: 12px;
-            margin-bottom: 10px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #764ba2;
-            color: #2d3748;
-        }
-
-        .learning-list li:before {
-            content: "🎯 ";
-            margin-right: 10px;
-        }
-
-        footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        .intro {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            line-height: 1.8;
-            color: #2d3748;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta name="description" content="Kevin Xiong is a Michigan-based software engineer building mobile tools, web apps, and game systems.">
+  <title>Kevin Xiong | Software Engineer</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/terrain.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <nav>
-          <a href="index.html">About Me</a>
-          <a href="capstone_page.html">My Journey</a>
-          <a href="hobbies_page.html">Hobbies & Interests</a>
-        </nav>
-
-
-        <div class="content">
-            <h1>Kevin Xiong</h1>
-            <p class="subtitle">Software Engineer</p>
-
-            <div class="intro">
-                <p>Hi, I’m a computer science senior who enjoys writing and experimenting with code that models real-world behaviors. I’m driven by curiosity, and continuous learning.</p>
-            </div>
-
-            <div class="section">
-                <h2>My Current Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>React Native</h3>
-                        <p>Building responsive and accessible web pages with clean, semantic code.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Java & Python</h3>
-                        <p>Creating interactive web experiences and understanding core programming concepts.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Git & GitHub</h3>
-                        <p>Version control and collaboration using industry-standard tools.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Problem Solving</h3>
-                        <p>Breaking down complex challenges into manageable solutions.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Team Collaboration</h3>
-                        <p>Working effectively in group projects and communicating technical ideas.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Web Design Basics</h3>
-                        <p>Understanding user experience and creating visually appealing interfaces.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Skills I Want to Learn More</h2>
-                <div class="learning-list">
-                    <ul>
-                        <li><strong>C++ Programming</strong></li>
-                        <li><strong>Backend Development</strong></li>
-                        <li><strong>Machine Learning</strong></li>
-                        <li><strong>Cloud Services (AWS, Azure)</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p> Kevin Xiong | Hosted on GitHub Pages</p>
-        </footer>
-    </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="brand" href="index.html" aria-label="Kevin Xiong, home"><span class="monogram" aria-hidden="true">KX</span><span>Kevin Xiong</span></a>
+    <nav aria-label="Main navigation"><a aria-current="page" href="index.html">Home</a><a href="capstone_page.html">Projects</a><a href="hobbies_page.html">About</a><a class="nav-github" href="https://github.com/Thorfinn980">GitHub</a></nav>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+    <section class="hero" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow role"><span class="role-mark" aria-hidden="true"></span>Software engineer</p>
+        <h1 id="name">Kevin<br> Xiong<span class="accent">.</span></h1>
+        <p class="hero-intro">I build mobile tools, web apps, and game systems. Based in Michigan.</p>
+        <div class="actions"><a class="button primary" href="capstone_page.html">View projects</a><a class="text-link" href="hobbies_page.html">About me</a></div>
+      </div>
+      <figure class="terrain" aria-labelledby="terrain-title">
+        <figcaption id="terrain-title"><i class="stack-mark" aria-hidden="true"></i>Terrain study</figcaption>
+        <img class="terrain-poster" src="assets/terrain.png" width="990" height="693" alt="An indigo mountain ridge in relief, traced with elevation contours.">
+        <canvas class="terrain-canvas" aria-label="Rotatable terrain model. Use left and right arrow keys to rotate, or Home to reset." role="img"></canvas>
+        <div class="terrain-panel"><span class="terrain-hint">Elevation contours</span><div class="view-switch" role="group" aria-label="Terrain view"><button type="button" data-view="relief" aria-pressed="true">Relief</button><button type="button" data-view="contours" aria-pressed="false">Contours</button></div></div>
+      </figure>
+    </section>
+    <section class="selected ruled" aria-labelledby="selected">
+      <div class="section-top"><h2 id="selected">Selected work</h2><a class="text-link" href="capstone_page.html">All projects</a></div>
+      <div class="card-grid">
+        <a class="project-card" href="capstone_page.html#linekeeper">
+  <div class="cover line-cover" aria-hidden="true">
+    <div class="ticket"><div class="ticket-bar"><span class="rail-icon"><i></i><i></i><i></i></span>LineKeeper</div><div class="ticket-inner"><div class="ticket-status"><i></i> Open work order</div>
+    <strong>Conveyor stops<br>intermittently</strong><div class="ticket-rule"></div><div class="work-asset">Packaging Conveyor A</div><span class="work-location">Plant A / Packaging</span></div></div>
+  </div><div class="card-copy"><span class="eyebrow">Mobile development</span><h3>LineKeeper</h3><p>A maintenance app that follows an equipment issue from the first report to the technician’s final note.</p><span class="stack">React Native / Flask / SQLite</span></div></a>
+        <a class="project-card" href="capstone_page.html#canopy-fall">
+  <div class="cover canopy-cover" aria-hidden="true"><span class="cover-game">Canopy<br>Fall<span>.</span></span><span class="game-point point-a"></span><span class="game-point point-b"></span></div><div class="card-copy"><span class="eyebrow">Game development</span><h3>Canopy Fall</h3><p>A digital tabletop for running tactical encounters, with map tokens, an equipment HUD, and a shared turn queue.</p><span class="stack">Tabletop systems / Interface design</span></div></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>Kevin Xiong</span><span>Michigan, USA</span><a href="https://github.com/Thorfinn980">GitHub profile</a></footer>
 </body>
 </html>
