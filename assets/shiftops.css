@@ -1,0 +1,52 @@
+.shiftops-cover {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4%;
+  padding: 5% 6% 0;
+  background: #d9e1df;
+}
+.shiftops-cover img {
+  width: 38%;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 6px 16px #26393630;
+}
+.shiftops-cover img + img { margin-top: 6%; }
+.shiftops-feature {
+  align-items: start;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: clamp(30px, 4vw, 60px);
+}
+.shiftops-screens {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(7px, 1vw, 16px);
+}
+.shiftops-screens a {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.shiftops-screens img { width: 100%; }
+.shiftops-screens figcaption {
+  margin-top: .55rem;
+  color: var(--muted);
+  font: .8rem/1.4 var(--mono);
+}
+.shiftops-disclosure { margin-top: 1.2rem; }
+.shiftops-disclosure summary { padding-block: .85rem; }
+.shiftops-disclosure summary > span:first-child { font-size: 1rem; letter-spacing: -.015em; }
+.shiftops-disclosure small { margin-left: auto; color: var(--muted); font: .77rem/1.4 var(--mono); }
+.shiftops-disclosure .demo { margin-bottom: .9rem; }
+.shiftops-film video {
+  display: block;
+  width: 100%;
+  height: min(68vh, 580px);
+  object-fit: contain;
+  background: #10191d;
+}
+.shiftops-film p { margin: .65rem 0 1rem; color: var(--muted); font-size: .88rem; }
+@media (max-width: 780px) {
+  .shiftops-feature { grid-template-columns: 1fr; }
+}

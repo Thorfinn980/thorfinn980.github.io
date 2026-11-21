@@ -1,3 +1,9 @@
+for (const player of document.querySelectorAll('.shiftops-film')) {
+  player.addEventListener('toggle', () => {
+    if (!player.open) player.querySelector('video').pause();
+  });
+}
+
 for (const gallery of document.querySelectorAll('[data-gallery]')) {
   const stage = gallery.querySelector('.gallery-stage');
   const image = stage.querySelector('img');
