@@ -93,16 +93,8 @@ h2 { font-size: clamp(1.85rem,3vw,2.75rem); line-height: 1.08; letter-spacing: -
 .ticket-rule { height: 1px; background: #d3dbce; margin-bottom: 6px; }
 .work-asset { font-weight: 600; font-size: .8rem; }
 .work-location { display: block; font-size: .72rem; color: #4a5b50; }
-.canopy-cover { place-items: center start; background: #c85b31 url('contour-print.png') center/cover; }
-.cover-game { padding-left: 9%; font: 800 clamp(3.25rem,5.5vw,5.45rem)/.79 "Barlow Condensed","Arial Narrow",Impact,var(--sans); text-transform: uppercase; letter-spacing: -.045em; color: #29261e; transform: rotate(-4deg); transition: transform .23s ease; }
-.cover-game span { color: #f6d8a8; }
-.game-point { position: absolute; width: 24px; aspect-ratio: 1; border: 1px solid #3b3025; transform: rotate(45deg); }
-.game-point::after { content: ""; position: absolute; inset: 5px; background: #29261e; }
-.point-a { right: 15%; top: 21%; }
-.point-b { right: 29%; bottom: 22%; width: 16px; border-color: #f4d8ac; }
-.point-b::after { background: #f4d8ac; inset: 4px; }
+.canopy-card-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .project-card:hover .ticket { transform: translateY(-3px) rotate(-3deg); }
-.project-card:hover .cover-game { transform: translateX(3px) rotate(-3deg); }
 .card-copy { padding-top: 18px; }
 .card-copy .eyebrow { font-size: .75rem; }
 .card-copy h3 { margin: 5px 0 5px; font-size: clamp(1.6rem,2.25vw,2.15rem); line-height: 1.15; letter-spacing: -.055em; font-weight: 620; }
@@ -186,7 +178,6 @@ details[open] summary::after { content: "−"; }
   .card-grid { gap: 34px; }
   .cover { aspect-ratio: 2.05; }
   .ticket { max-width: 236px; }
-  .cover-game { font-size: clamp(3.45rem,13vw,5.6rem); }
   .section-top { margin-bottom: 20px; }
   .about-row { gap: 20px; }
   .row-meta { display: none; }
